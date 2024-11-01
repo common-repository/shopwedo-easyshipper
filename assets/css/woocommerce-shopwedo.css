@@ -1,0 +1,131 @@
+#shopwedo_service_overlay {
+	display: none; /* hidden by default */
+	width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 100000; /* admin-bar+1 */
+    background: rgba(0, 0, 0, 0.3);
+    top: 0; right: 0; bottom: 0; left: 0;
+    margin: 0 auto;
+    vertical-align: middle;
+}
+#shopwedo_service_map {
+	height: 600px; /* inside of #shopwedo_service_overlay - so hidden by default */
+	max-height: 100vh;
+	max-height: 100%;
+	width: 800px;
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+/*
+* Button for opening Google Maps with DPD Parcels.
+*/
+.shopwedo_service_button-open_map,
+.shopwedo_service_button-open_map_other {
+	width: 100%;
+}
+.shopwedo_service_button-open_map:link,
+.shopwedo_service_button-open_map:visited,
+.shopwedo_service_button-open_map:hover,
+.shopwedo_service_button-open_map:active {
+	background: #000;
+    color: #FFF;
+}
+
+.shopwedo_service_button-open_map_other,
+.button.shopwedo_service_button-open_map_other {
+	display: none;
+}
+
+.shopwedo_service_current_pickup_location {
+	display: block;
+	background-color: #eee;
+	color: #333;
+	padding: 1em;
+}
+.shopwedo_service_current_pickup_location.hidden {
+	display: none;
+}
+
+.shopwedo_service_current_data { /*debug*/
+	display: block;
+}
+.shopwedo_service_current_data.hidden { /*debug*/
+	display: none;
+}
+
+.shopwedo_service_reposition button {
+	min-width: 100%;
+	white-space: pre-wrap;
+}
+
+/*
+* Floats
+*/
+.pull-left {
+	float: left;
+}
+.pull-right {
+	float: right;
+}
+/*
+* Shops 
+*/
+.shopwedo_service_pudo_location {
+    border-top: 1px solid #D8D8D8;
+    padding-top: 1em;
+}
+.shopwedo_service_list {
+	display: block;
+	list-style-type: none;
+	overflow: hidden;
+	overflow-y: scroll;
+	max-height: 500px;
+	max-height: 90%;
+	max-height: 90vh;
+	margin: 0 auto;
+}
+.shopwedo_service_list > * {
+	border-bottom: 1px dashed #ddd;
+	margin: 0 auto;
+	padding: 1em;
+	clear:both;
+}
+.shopwedo_service_list > .active {
+	background-color: #ccc;
+	color: #000;
+}
+.dpd_service_shop h4:after {
+    clear: both;
+    content: "";
+    display: block;
+}
+
+
+/*
+* OpeningHours
+*/
+.openingHour:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+.day {
+	float: left;
+}
+.hour {
+	float: right;
+}
+
+/*
+* Selectable shops only for tablet/smartphone
+*/
+@media (max-width: 767px){
+	.shopwedo_service_list {
+		display: block;
+	}
+	.shopwedo_service_button-open_map {
+		display: none;
+	}
+}
